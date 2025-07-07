@@ -1,2 +1,55 @@
-# Clean-C
-This is a lightweight Windows system C drive cleaning tool that can safely remove temporary files and caches in the system, helping to free up disk space.
+# 安全的C盘清理工具
+
+这是一个轻量级的Windows系统C盘清理工具，它可以安全地清理系统中的临时文件和缓存，帮助释放磁盘空间。
+
+## 功能特点
+
+- 安全清理，不会删除系统关键文件
+- 清理Windows临时文件夹
+- 清理用户临时文件夹
+- 清理Windows更新缓存
+- 清空回收站
+- 显示清理结果统计
+
+## 安全性说明
+
+本程序采取了以下安全措施：
+1. 只清理临时文件和缓存
+2. 不删除系统文件
+3. 清理前会检查文件属性
+4. 只清理指定的安全目录
+
+## 编译说明
+
+### 使用 MinGW 编译
+
+```bash
+gcc disk_cleaner.c -o disk_cleaner.exe -lshell32
+```
+
+### 使用 Visual Studio 命令行编译
+
+```bash
+cl disk_cleaner.c /link shell32.lib
+```
+
+## 使用说明
+
+1. 以管理员身份运行程序（必须）
+2. 程序会显示将要清理的内容
+3. 按任意键开始清理
+4. 等待清理完成
+5. 查看清理结果
+
+## 注意事项
+
+1. 必须以管理员权限运行
+2. 建议在清理前备份重要文件
+3. 程序运行时请不要手动操作被清理的目录
+4. 如果某些文件正在使用中，可能无法被删除
+
+## 系统要求
+
+- Windows 7/8/10/11
+- 管理员权限
+- 最小磁盘空间：1MB 
